@@ -1,0 +1,172 @@
+{% extends "home.html" %}
+{% block content %}
+
+
+<style type='text/css'>
+
+body{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.btn_choice{
+	margin: 10px;
+}
+
+form{
+	display: none;
+}
+
+#valueScore{
+	/*never show*/
+	display: none;
+}
+.alert{
+	display: none;
+	width: 400px;
+	margin: 0 auto;
+}
+#ICONNAME{
+	font-weight: bolder;
+	color: red;
+}
+
+</style>
+	
+
+<h1>Click rapide</h1>
+
+<hr>
+
+<div id="countdown"></div>
+
+<hr>
+
+<h2>Trouvé: <span id='ICONNAME'></span></h2>
+
+<hr>
+
+<button class="btn btn-default btn_choice" id='but1'><span id='span0' class='spanIcons'></span></button>
+<button class="btn btn-default btn_choice" id='but2'><span id='span1' class='spanIcons'></span></button>
+<button class="btn btn-default btn_choice" id='but3'><span id='span2' class='spanIcons'></span></button><br>
+<button class="btn btn-default btn_choice" id='but4'><span id='span3' class='spanIcons'></span></button>
+<button class="btn btn-default btn_choice" id='but5'><span id='span4' class='spanIcons'></span></button>
+<button class="btn btn-default btn_choice" id='but6'><span id='span5' class='spanIcons'></span></button><br><br>
+
+<p>Score = <span id="SCORE"></span></p>
+
+<div class="alert alert-success">
+	<form action="{{ url_for('addscore') }}" method="POST">
+		Bravo! Entrez votre nom: <input id="NAME" type="text" name="name" placeholder="yourname"><br><br>
+		<input id="valueScore" name="score" value="0">
+		<input type="submit" value="Soumettre">
+	</form>
+</div>
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+
+gameTime = 30;
+
+$('#countdown').timeTo(gameTime, function(){ 
+	$("form").css('display', 'block');
+	$(".btn_choice").attr("disabled", "disabled");
+	$(".alert").css('display', 'block');
+
+});
+
+
+	
+var coeur = {name: 'Coeur', icon: 'glyphicon glyphicon-heart'}
+var nuage = {name: 'Nuage', icon: 'glyphicon glyphicon-cloud'}
+var plus = {name: 'Plus', icon: 'glyphicon glyphicon-plus'}
+var crayon = {name: 'Crayon', icon: 'glyphicon glyphicon-pencil'}
+var maison = {name: 'Maison', icon: 'glyphicon glyphicon-home'}
+var camera = {name: 'Caméra', icon: 'glyphicon glyphicon-camera'}
+	
+var mainArray = [coeur, nuage, plus, crayon, maison, camera];
+var randomIndex = 0;
+var currentAnswer = '';
+
+var score = 0;
+
+function showScore(){
+	$("#SCORE").html(score);
+
+	//put the score in the value of an input so python can read it in the form.
+	document.getElementById("valueScore").value = score; // jquery doesnt seems to work //left hand assignement
+}
+
+function getRandomIndex(){
+	//get random index
+	randomIndex = Math.floor(Math.random() * mainArray.length);
+	//get the object
+	currentAnswer = mainArray[randomIndex];
+	console.log(randomIndex);
+}	
+
+	
+function newSymbol(){
+	shuffleArray(mainArray)
+	$.each(mainArray, function (index, value){
+	console.log(index + value.icon);
+	$('#span' + index).addClass(value.icon);
+	});
+	getRandomIndex();
+	console.log(currentAnswer);
+	$('#ICONNAME').html(currentAnswer.name);
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+
+
+//Initiate first quiz
+newSymbol();
+
+$('.btn_choice').click(function(){
+	//si La bonne reponse...
+	if($(this).children().hasClass(currentAnswer.icon)){
+	
+		$.each(mainArray, function (index, value){
+		$('#span' + index).removeClass(value.icon);
+		});
+		newSymbol();
+
+		score += 1;
+		showScore();
+	}else{ // si la mauvaise reponse
+
+		$.each(mainArray, function (index, value){
+		$('#span' + index).removeClass(value.icon);
+		});
+		newSymbol();
+
+		score -= 1;
+		showScore();
+	}
+});
+
+
+
+//Modal
+
+
+
+
+});
+</script>
+
+{% endblock %}

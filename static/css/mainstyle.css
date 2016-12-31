@@ -1,0 +1,11 @@
+/*main stylesheet*/
+
+
+body{
+	text-align: center;
+	margin: 0 auto;
+    background-image: url("../img/");
+    background-size: 100% 1000px;
+    background-repeat: no-repeat;
+}
+

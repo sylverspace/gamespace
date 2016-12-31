@@ -1,0 +1,766 @@
+{% extends "home.html" %}
+{% block content %}
+
+<style type="text/css">
+body{
+	margin: 0;
+}
+.container{
+	margin: 0 auto;
+	width: 600px;
+	height: 780px;
+	text-align: center;
+    border: 1px solid black;
+    position: relative;
+    /*Make container unselectable*/
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+}
+
+
+table{
+	position: absolute;
+	left: 543px;
+	top: 48px; 
+	/*border: 1px solid black;*/
+	font-weight: bold;
+	font-size: 12px;
+}
+
+table td{
+	padding: ;
+	line-height: 17px;
+}
+img {
+	position: relative;
+	margin: 0 auto;
+
+}
+
+/* NAME *****************************************************/
+
+.name{
+	height: 20px;
+	position: absolute;
+	left: 100px;
+	top: 22px;
+
+/*****************************************************/
+/* HEALTH BOX ****************************************/
+/*****************************************************/
+
+}
+.healthBox{
+	position: absolute;
+}
+.healthBox_1{
+	left: 67px;
+	top: 53px;
+}
+.healthBox_2{
+	left: 86px;
+	top: 53px;
+}
+.healthBox_3{
+	left: 105px;
+	top: 53px;
+}
+.healthBox_4{
+	left: 125px;
+	top: 53px;
+}
+/***************/
+.healthBox_5{
+	left: 222px;
+	top: 53px;
+}
+.healthBox_6{
+	left: 241px;
+	top: 53px;
+}
+/***************/
+.healthBox_7{
+	left: 337px;
+	top: 53px;
+}
+.healthBox_8{
+	left: 356px;
+	top: 53px;
+}
+
+/*****************************************************/
+/* MISSIONS__________________________________________*/
+/*****************************************************/
+
+
+.mission{
+	height: 22px;
+	width: 22px;
+	position: absolute;
+	opacity: 0.5;
+	border-radius: 5px;
+}
+.missionOff{
+	background-color: yellow;
+}
+.missionActive{
+	background-color: blue;
+}
+.missionComplete{
+	background-color: red;
+}
+
+#sec1-1{
+	left: 49px;
+	top: 462px;
+}
+#sec1-2{
+	left: 69px;
+	top: 423px;
+}
+#sec1-3{
+	left: 89px;
+	top: 462px;
+}
+#sec1-4{
+	left: 69px;
+	top: 363px;
+}
+#sec1-5{
+	left: 129px;	
+	top: 303px;
+}
+#sec1-6{
+	left: 169px;
+	top: 323px;
+}
+/*************************************/
+#sec2-1{
+	left: 50px;	
+	top: 678px;
+}
+#sec2-2{
+	left: 70px;
+	top: 639px;
+}
+#sec2-3{
+	left: 110px;
+	top: 619px;
+}
+#sec2-4{
+	left: 150px;
+	top: 619px;
+}
+#sec2-5{
+	left: 150px;
+	top: 658px;
+}
+#sec2-6{
+	left: 188px;
+	top: 678px;
+}
+/*************************************/
+#sec3-1{
+	left: 286px;	
+	top: 698px;
+}
+#sec3-2{
+	left: 346px;
+	top: 579px;
+}
+#sec3-3{
+	left: 346px;
+	top: 659px;
+}
+#sec3-4{
+	left: 366px;
+	top: 698px;
+}
+#sec3-5{
+	left: 425px;
+	top: 579px;
+}
+#sec3-6{
+	left: 445px;
+	top: 678px;
+}
+/*************************************/
+#sec4-1{
+	left: 327px;	
+	top: 441px;
+}
+#sec4-2{
+	left: 366px;
+	top: 441px;
+}
+#sec4-3{
+	left: 406px;
+	top: 441px;
+}
+#sec4-4{
+	left: 445px;
+	top: 441px;
+}
+#sec4-5{
+	left: 445px;
+	top: 402px;
+}
+#sec4-6{
+	left: 425px;
+	top: 362px;
+}
+
+</style>
+
+<h1>Specter Ops Chart</h1>
+
+
+<div class="container">
+
+	<img src="{{ url_for('static', filename='img/specteropschart.png') }}" usemap="#chartmap">
+
+	<map name="chartmap" id="chartmap" class="chartmap">
+		<!--SQUARES-->
+		<!--ROW-00 TO COPY PASTE-->
+		<!--
+	  	<area shape="rect" coords="17,xxx,35,zzz" id="A-2" title="A-2">
+	  	<area shape="rect" coords="37,xxx,55,zzz" id="B-2" title="B-2">
+	  	<area shape="rect" coords="57,xxx,75,zzz" id="C-2" title="C-2">
+	  	<area shape="rect" coords="76,xxx,94,zzz" id="D-2" title="D-2">
+	  	<area shape="rect" coords="96,xxx,114,zzz" id="E-2" title="E-2">
+	  	<area shape="rect" coords="115,xxx,133,zzz" id="F-2" title="F-2">
+	  	<area shape="rect" coords="135,xxx,153,zzz" id="G-2" title="G-2">
+	  	<area shape="rect" coords="155,xxx,173,zzz" id="H-2" title="H-2">
+	  	<area shape="rect" coords="175,xxx,193,zzz" id="I-2" title="I-2">
+	  	<area shape="rect" coords="195,xxx,213,zzz" id="J-2" title="J-2">
+	  	<area shape="rect" coords="215,xxx,233,zzz" id="K-2" title="K-2">
+	  	<area shape="rect" coords="234,xxx,252,zzz" id="L-2" title="L-2">
+	  	<area shape="rect" coords="254,xxx,272,zzz" id="M-2" title="M-2">
+	  	<area shape="rect" coords="274,xxx,292,zzz" id="N-2" title="N-2">
+	  	<area shape="rect" coords="294,xxx,312,zzz" id="O-2" title="O-2">
+	  	<area shape="rect" coords="314,xxx,332,zzz" id="P-2" title="P-2">
+	  	<area shape="rect" coords="334,xxx,352,zzz" id="Q-2" title="Q-2">
+	  	<area shape="rect" coords="353,xxx,371,zzz" id="R-2" title="R-2">
+	  	<area shape="rect" coords="373,xxx,391,zzz" id="S-2" title="S-2">
+	  	<area shape="rect" coords="392,xxx,410,zzz" id="T-2" title="T-2">
+	  	<area shape="rect" coords="412,xxx,430,zzz" id="U-2" title="U-2">
+	  	<area shape="rect" coords="432,xxx,450,zzz" id="V-2" title="V-2">
+	  	<area shape="rect" coords="452,xxx,470,zzz" id="W-2" title="W-2">
+		-->
+		
+		<!--ROW-01-->
+	  	<area shape="rect" coords="17,109,35,127" id="A-1" title="A-1">
+	  	<area shape="rect" coords="37,109,55,127" id="B-1" title="B-1">
+	  	<area shape="rect" coords="76,109,94,127" id="D-1" title="D-1">
+	  	<area shape="rect" coords="115,109,133,127" id="F-1" title="F-1">
+	  	<area shape="rect" coords="155,109,173,127" id="H-1" title="H-1">
+	  	<area shape="rect" coords="195,109,213,127" id="J-1" title="J-1">
+	  	<area shape="rect" coords="234,109,252,127" id="L-1" title="L-1">
+	  	<area shape="rect" coords="254,109,272,127" id="M-1" title="M-1">
+	  	<area shape="rect" coords="274,109,292,127" id="N-1" title="N-1">
+	  	<area shape="rect" coords="294,109,312,127" id="O-1" title="O-1">
+	  	<area shape="rect" coords="314,109,332,127" id="P-1" title="P-1">
+	  	<area shape="rect" coords="334,109,352,127" id="Q-1" title="Q-1">
+	  	<area shape="rect" coords="353,109,371,127" id="R-1" title="R-1">
+
+	  	<!--ROW-02-->
+	  	<area shape="rect" coords="37,129,55,147" id="B-2" title="B-2">
+	  	<area shape="rect" coords="57,129,75,147" id="C-2" title="C-2">
+	  	<area shape="rect" coords="76,129,94,147" id="D-2" title="D-2">
+	  	<area shape="rect" coords="96,129,114,147" id="E-2" title="E-2">
+	  	<area shape="rect" coords="115,129,133,147" id="F-2" title="F-2">
+	  	<area shape="rect" coords="135,129,153,147" id="G-2" title="G-2">
+	  	<area shape="rect" coords="155,129,173,147" id="H-2" title="H-2">
+	  	<area shape="rect" coords="175,129,193,147" id="I-2" title="I-2">
+	  	<area shape="rect" coords="195,129,213,147" id="J-2" title="J-2">
+	  	<area shape="rect" coords="234,129,252,147" id="L-2" title="L-2">
+	  	<area shape="rect" coords="274,129,292,147" id="N-2" title="N-2">
+	  	<area shape="rect" coords="294,129,312,147" id="O-2" title="O-2">
+	  	<area shape="rect" coords="353,129,371,147" id="R-2" title="R-2">
+	  	<area shape="rect" coords="393,129,410,147" id="T-2" title="T-2">
+	  	<area shape="rect" coords="452,129,470,147" id="W-2" title="W-2">
+
+
+		<!--ROW-03-->
+	  	<area shape="rect" coords="17,148,35,166" id="A-3" title="A-3">
+	  	<area shape="rect" coords="37,148,55,166" id="B-3" title="B-3">
+	  	<area shape="rect" coords="96,148,114,166" id="E-3" title="E-3">
+	  	<area shape="rect" coords="135,148,153,166" id="G-3" title="G-3">
+	  	<area shape="rect" coords="195,148,213,166" id="J-3" title="J-3">
+	  	<area shape="rect" coords="215,148,233,166" id="K-3" title="K-3">
+	  	<area shape="rect" coords="234,148,252,166" id="L-3" title="L-3">
+	  	<area shape="rect" coords="274,148,292,166" id="N-3" title="N-3">
+	  	<area shape="rect" coords="294,148,312,166" id="O-3" title="O-3">
+	  	<area shape="rect" coords="334,148,352,166" id="Q-3" title="Q-3">
+	  	<area shape="rect" coords="353,148,371,166" id="R-3" title="R-3">
+	  	<area shape="rect" coords="373,148,391,166" id="S-3" title="S-3">
+	  	<area shape="rect" coords="392,148,410,166" id="T-3" title="T-3">
+	  	<area shape="rect" coords="412,148,430,166" id="U-3" title="U-3">
+	  	<area shape="rect" coords="432,148,450,166" id="V-3" title="V-3">
+	  	<area shape="rect" coords="452,148,470,166" id="W-3" title="W-3">
+
+	  	<!--ROW-4-->
+	  	<area shape="rect" coords="37,168,55,186" id="B-4" title="B-4">
+	  	<area shape="rect" coords="76,168,94,186" id="D-4" title="D-4">
+	  	<area shape="rect" coords="96,168,114,186" id="E-4" title="E-4">
+	  	<area shape="rect" coords="115,168,133,186" id="F-4" title="F-4">
+	  	<area shape="rect" coords="135,168,153,186" id="G-4" title="G-4">
+	  	<area shape="rect" coords="155,168,173,186" id="H-4" title="H-4">
+	  	<area shape="rect" coords="195,168,213,186" id="J-4" title="J-4">
+	  	<area shape="rect" coords="234,168,252,186" id="L-4" title="L-4">
+	  	<area shape="rect" coords="254,168,272,186" id="M-4" title="M-4">
+	  	<area shape="rect" coords="274,168,292,186" id="N-4" title="N-4">
+	  	<area shape="rect" coords="294,168,312,186" id="O-4" title="O-4">
+	  	<area shape="rect" coords="314,168,332,186" id="P-4" title="P-4">
+	  	<area shape="rect" coords="334,168,352,186" id="Q-4" title="Q-4">
+	  	<area shape="rect" coords="373,168,391,186" id="S-4" title="S-4">
+	  	<area shape="rect" coords="412,168,430,186" id="U-4" title="U-4">
+
+	  	<!--ROW-5-->
+	  	<area shape="rect" coords="17,188,35,206" id="A-5" title="A-5">
+	  	<area shape="rect" coords="37,188,55,206" id="B-5" title="B-5">
+	  	<area shape="rect" coords="57,188,75,206" id="C-5" title="C-5">
+	  	<area shape="rect" coords="76,188,94,206" id="D-5" title="D-5">
+	  	<area shape="rect" coords="115,188,133,206" id="F-5" title="F-5">
+	  	<area shape="rect" coords="155,188,173,206" id="H-5" title="H-5">
+	  	<area shape="rect" coords="175,188,193,206" id="I-5" title="I-5">
+	  	<area shape="rect" coords="195,188,213,206" id="J-5" title="J-5">
+	  	<area shape="rect" coords="215,188,233,206" id="K-5" title="K-5">
+	  	<area shape="rect" coords="234,188,252,206" id="L-5" title="L-5">
+	  	<area shape="rect" coords="274,188,292,206" id="N-5" title="N-5">
+	  	<area shape="rect" coords="294,188,312,206" id="O-5" title="O-5">
+	  	<area shape="rect" coords="334,188,352,206" id="Q-5" title="Q-5">
+	  	<area shape="rect" coords="353,188,371,206" id="R-5" title="R-5">
+	  	<area shape="rect" coords="373,188,391,206" id="S-5" title="S-5">
+	  	<area shape="rect" coords="392,188,410,206" id="T-5" title="T-5">
+	  	<area shape="rect" coords="412,188,430,206" id="U-5" title="U-5">
+	  	<area shape="rect" coords="432,188,450,206" id="V-5" title="V-5">
+	  	<area shape="rect" coords="452,188,470,206" id="W-5" title="W-5">
+
+	  	<!--ROW-6-->
+	  	<area shape="rect" coords="17,208,35,226" id="A-6" title="A-6">
+	  	<area shape="rect" coords="76,208,94,226" id="D-6" title="D-6">
+	  	<area shape="rect" coords="115,208,133,226" id="F-6" title="F-6">
+	  	<area shape="rect" coords="175,208,193,226" id="I-6" title="I-6">
+	  	<area shape="rect" coords="215,208,233,226" id="K-6" title="K-6">
+	  	<area shape="rect" coords="274,208,292,226" id="N-6" title="N-6">
+	  	<area shape="rect" coords="294,208,312,226" id="O-6" title="O-6">
+	  	<area shape="rect" coords="314,208,332,226" id="P-6" title="P-6">
+	  	<area shape="rect" coords="334,208,352,226" id="Q-6" title="Q-6">
+	  	<area shape="rect" coords="392,208,410,226" id="T-6" title="T-6">
+	  	<area shape="rect" coords="452,208,470,226" id="W-6" title="W-6">
+
+	  	<!--ROW-7-->
+	  	<area shape="rect" coords="17,228,35,246" id="A-7" title="A-7">
+	  	<area shape="rect" coords="37,228,55,246" id="B-7" title="B-7">
+	  	<area shape="rect" coords="57,228,75,246" id="C-7" title="C-7">
+	  	<area shape="rect" coords="76,228,94,246" id="D-7" title="D-7">
+	  	<area shape="rect" coords="96,228,114,246" id="E-7" title="E-7">
+	  	<area shape="rect" coords="115,228,133,246" id="F-7" title="F-7">
+	  	<area shape="rect" coords="135,228,153,246" id="G-7" title="G-7">
+	  	<area shape="rect" coords="155,228,173,246" id="H-7" title="H-7">
+	  	<area shape="rect" coords="175,228,193,246" id="I-7" title="I-7">
+	  	<area shape="rect" coords="195,228,213,246" id="J-7" title="J-7">
+	  	<area shape="rect" coords="215,228,233,246" id="K-7" title="K-7">
+	  	<area shape="rect" coords="234,228,252,246" id="L-7" title="L-7">
+	  	<area shape="rect" coords="254,228,272,246" id="M-7" title="M-7">
+	  	<area shape="rect" coords="274,228,292,246" id="N-7" title="N-7">
+	  	<area shape="rect" coords="294,228,312,246" id="O-7" title="O-7">
+	  	<area shape="rect" coords="334,228,352,246" id="Q-7" title="Q-7">
+	  	<area shape="rect" coords="373,228,391,246" id="S-7" title="S-7">
+	  	<area shape="rect" coords="392,228,410,246" id="T-7" title="T-7">
+	  	<area shape="rect" coords="412,228,430,246" id="U-7" title="U-7">
+	  	<area shape="rect" coords="432,228,450,246" id="V-7" title="V-7">
+	  	<area shape="rect" coords="452,228,470,246" id="W-7" title="W-7">
+
+	  	<!--ROW-8-->
+	    <area shape="rect" coords="17,248,35,266" id="A-8" title="A-8">
+	  	<area shape="rect" coords="37,248,55,266" id="B-8" title="B-8">
+	  	<area shape="rect" coords="57,248,75,266" id="C-8" title="C-8">
+	  	<area shape="rect" coords="76,248,94,266" id="D-8" title="D-8">
+	  	<area shape="rect" coords="96,248,114,266" id="E-8" title="E-8">
+	  	<area shape="rect" coords="115,248,133,266" id="F-8" title="F-8">
+	  	<area shape="rect" coords="135,248,153,266" id="G-8" title="G-8">
+	  	<area shape="rect" coords="155,248,173,266" id="H-8" title="H-8">
+	  	<area shape="rect" coords="175,248,193,266" id="I-8" title="I-8">
+	  	<area shape="rect" coords="195,248,213,266" id="J-8" title="J-8">
+	  	<area shape="rect" coords="215,248,233,266" id="K-8" title="K-8">
+	  	<area shape="rect" coords="234,248,252,266" id="L-8" title="L-8">
+	  	<area shape="rect" coords="254,248,272,266" id="M-8" title="M-8">
+	  	<area shape="rect" coords="274,248,292,266" id="N-8" title="N-8">
+	  	<area shape="rect" coords="294,248,312,266" id="O-8" title="O-8">
+	  	<area shape="rect" coords="314,248,332,266" id="P-8" title="P-8">
+	  	<area shape="rect" coords="334,248,352,266" id="Q-8" title="Q-8">
+	  	<area shape="rect" coords="353,248,371,266" id="R-8" title="R-8">
+	  	<area shape="rect" coords="373,248,391,266" id="S-8" title="S-8">
+	  	<area shape="rect" coords="432,248,450,266" id="V-8" title="V-8">
+
+	  	<!--ROW-9-->
+	  	<area shape="rect" coords="37,267,55,285" id="B-9" title="B-9">
+	  	<area shape="rect" coords="96,267,114,285" id="E-9" title="E-9">
+	  	<area shape="rect" coords="135,267,153,285" id="G-9" title="G-9">
+	  	<area shape="rect" coords="195,267,213,285" id="J-9" title="J-9">
+	  	<area shape="rect" coords="234,267,252,285" id="L-9" title="L-9">
+	  	<area shape="rect" coords="274,267,292,285" id="N-9" title="N-9">
+	  	<area shape="rect" coords="294,267,312,285" id="O-9" title="O-9">
+	  	<area shape="rect" coords="334,267,352,285" id="Q-9" title="Q-9">
+	  	<area shape="rect" coords="373,267,391,285" id="S-9" title="S-9">
+	  	<area shape="rect" coords="392,267,410,285" id="T-9" title="T-9">
+	  	<area shape="rect" coords="412,267,430,285" id="U-9" title="U-9">
+	  	<area shape="rect" coords="432,267,450,285" id="V-9" title="V-9">
+	  	<area shape="rect" coords="452,267,470,285" id="W-9" title="W-9">
+
+	  	<!--ROW-10-->
+	  	<area shape="rect" coords="17,287,35,305" id="A-10" title="A-10">
+	  	<area shape="rect" coords="37,287,55,305" id="B-10" title="B-10">
+	  	<area shape="rect" coords="57,287,75,305" id="C-10" title="C-10">
+	  	<area shape="rect" coords="96,287,114,305" id="E-10" title="E-10">
+	  	<area shape="rect" coords="115,287,133,305" id="F-10" title="F-10">
+	  	<area shape="rect" coords="135,287,153,305" id="G-10" title="G-10">
+	  	<area shape="rect" coords="175,287,193,305" id="I-10" title="I-10">
+	  	<area shape="rect" coords="195,287,213,305" id="J-10" title="J-10">
+	  	<area shape="rect" coords="215,287,233,305" id="K-10" title="K-10">
+	  	<area shape="rect" coords="234,287,252,305" id="L-10" title="L-10">
+	  	<area shape="rect" coords="254,287,272,305" id="M-10" title="M-10">
+	  	<area shape="rect" coords="274,287,292,305" id="N-10" title="N-10">
+	  	<area shape="rect" coords="294,287,312,305" id="O-10" title="O-10">
+	  	<area shape="rect" coords="314,287,332,305" id="P-10" title="P-10">
+	  	<area shape="rect" coords="334,287,352,305" id="Q-10" title="Q-10">
+	  	<area shape="rect" coords="353,287,371,305" id="R-10" title="R-10">
+	  	<area shape="rect" coords="373,287,391,305" id="S-10" title="S-10">
+	  	<area shape="rect" coords="412,287,430,305" id="U-10" title="U-10">
+	  	<area shape="rect" coords="452,287,470,305" id="W-10" title="W-10">
+
+	  	<!--ROW-11-->
+	  	<area shape="rect" coords="17,306,35,324" id="A-11" title="A-11">
+	  	<area shape="rect" coords="57,306,75,324" id="C-11" title="C-11">
+	  	<area shape="rect" coords="76,306,94,324" id="D-11" title="D-11">
+	  	<area shape="rect" coords="96,306,114,324" id="E-11" title="E-11">
+	  	<area shape="rect" coords="135,306,153,324" id="G-11" title="G-11">
+	  	<area shape="rect" coords="155,306,173,324" id="H-11" title="H-11">
+	  	<area shape="rect" coords="175,306,193,324" id="I-11" title="I-11">
+	  	<area shape="rect" coords="234,306,252,324" id="L-11" title="L-11">
+	  	<area shape="rect" coords="274,306,292,324" id="N-11" title="N-11">
+	  	<area shape="rect" coords="294,306,312,324" id="O-11" title="O-11">
+	  	<area shape="rect" coords="353,306,371,324" id="R-11" title="R-11">
+	  	<area shape="rect" coords="412,306,430,324" id="U-11" title="U-11">
+	  	<area shape="rect" coords="452,306,470,324" id="W-11" title="W-11">
+
+	  	<!--ROW-12-->
+	  	<area shape="rect" coords="17,326,35,344" id="A-12" title="A-12">
+	  	<area shape="rect" coords="57,326,75,344" id="C-12" title="C-12">
+	  	<area shape="rect" coords="96,326,114,344" id="E-12" title="E-12">
+	  	<area shape="rect" coords="115,326,133,344" id="F-12" title="F-12">
+	  	<area shape="rect" coords="135,326,153,344" id="G-12" title="G-12">
+	  	<area shape="rect" coords="175,326,193,344" id="I-12" title="I-12">
+	  	<area shape="rect" coords="234,326,252,344" id="L-12" title="L-12">
+	  	<area shape="rect" coords="254,326,272,344" id="M-12" title="M-12">
+	  	<area shape="rect" coords="274,326,292,344" id="N-12" title="N-12">
+	  	<area shape="rect" coords="294,326,312,344" id="O-12" title="O-12">
+	  	<area shape="rect" coords="314,326,332,344" id="P-12" title="P-12">
+	  	<area shape="rect" coords="334,326,352,344" id="Q-12" title="Q-12">
+	  	<area shape="rect" coords="353,326,371,344" id="R-12" title="R-12">
+	  	<area shape="rect" coords="373,326,391,344" id="S-12" title="S-12">
+	  	<area shape="rect" coords="392,326,410,344" id="T-12" title="T-12">
+	  	<area shape="rect" coords="412,326,430,344" id="U-12" title="U-12">
+	  	<area shape="rect" coords="432,326,450,344" id="V-12" title="V-12">
+	  	<area shape="rect" coords="452,326,470,344" id="W-12" title="W-12">
+
+	  	<!--ROW-13-->
+	  	<area shape="rect" coords="17,346,35,364" id="A-13" title="A-13">
+	  	<area shape="rect" coords="37,346,55,364" id="B-13" title="B-13">
+	  	<area shape="rect" coords="57,346,75,364" id="C-13" title="C-13">
+	  	<area shape="rect" coords="76,346,94,364" id="D-13" title="D-13">
+	  	<area shape="rect" coords="96,346,114,364" id="E-13" title="E-13">
+	  	<area shape="rect" coords="135,346,153,364" id="G-13" title="G-13">
+	  	<area shape="rect" coords="155,346,173,364" id="H-13" title="H-13">
+	  	<area shape="rect" coords="175,346,193,364" id="I-13" title="I-13">
+	  	<area shape="rect" coords="195,346,213,364" id="J-13" title="J-13">
+	  	<area shape="rect" coords="215,346,233,364" id="K-13" title="K-13">
+	  	<area shape="rect" coords="234,346,252,364" id="L-13" title="L-13">
+	  	<area shape="rect" coords="274,346,292,364" id="N-13" title="N-13">
+	  	<area shape="rect" coords="294,346,312,364" id="O-13" title="O-13">
+	  	<area shape="rect" coords="314,346,332,364" id="P-13" title="P-13">
+	  	<area shape="rect" coords="334,346,352,364" id="Q-13" title="Q-13">
+	  	<area shape="rect" coords="353,346,371,364" id="R-13" title="R-13">
+	  	<area shape="rect" coords="373,346,391,364" id="S-13" title="S-13">
+	  	<area shape="rect" coords="392,346,410,364" id="T-13" title="T-13">
+	  	<area shape="rect" coords="412,346,430,364" id="U-13" title="U-13">
+	  	<area shape="rect" coords="432,346,450,364" id="V-13" title="V-13">
+	  	<area shape="rect" coords="452,346,470,364" id="W-13" title="W-13">
+
+	  	<!--ROW-14-->
+	  	<area shape="rect" coords="37,366,55,384" id="B-14" title="B-14">
+	  	<area shape="rect" coords="76,366,94,384" id="D-14" title="D-14">
+	  	<area shape="rect" coords="155,366,173,384" id="H-14" title="H-14">
+	  	<area shape="rect" coords="215,366,233,384" id="K-14" title="K-14">
+	  	<area shape="rect" coords="274,366,292,384" id="N-14" title="N-14">
+	  	<area shape="rect" coords="294,366,312,384" id="O-14" title="O-14">
+	  	<area shape="rect" coords="353,366,371,384" id="R-14" title="R-14">
+	  	<area shape="rect" coords="392,366,410,384" id="T-14" title="T-14">
+	  	<area shape="rect" coords="412,366,430,384" id="U-14" title="U-14">
+	  	<area shape="rect" coords="432,366,450,384" id="V-14" title="V-14">
+
+	  	<!--ROW-15-->
+	  	<area shape="rect" coords="17,385,35,403" id="A-15" title="A-15">
+	  	<area shape="rect" coords="37,385,55,403" id="B-15" title="B-15">
+	  	<area shape="rect" coords="57,385,75,403" id="C-15" title="C-15">
+	  	<area shape="rect" coords="76,385,94,403" id="D-15" title="D-15">
+	  	<area shape="rect" coords="96,385,114,403" id="E-15" title="E-15">
+	  	<area shape="rect" coords="115,385,133,403" id="F-15" title="F-15">
+	  	<area shape="rect" coords="135,385,153,403" id="G-15" title="G-15">
+	  	<area shape="rect" coords="155,385,173,403" id="H-15" title="H-15">
+	  	<area shape="rect" coords="175,385,193,403" id="I-15" title="I-15">
+	  	<area shape="rect" coords="195,385,213,403" id="J-15" title="J-15">
+	  	<area shape="rect" coords="215,385,233,403" id="K-15" title="K-15">
+	  	<area shape="rect" coords="234,385,252,403" id="L-15" title="L-15">
+	  	<area shape="rect" coords="254,385,272,403" id="M-15" title="M-15">
+	  	<area shape="rect" coords="274,385,292,403" id="N-15" title="N-15">
+	  	<area shape="rect" coords="294,385,312,403" id="O-15" title="O-15">
+	  	<area shape="rect" coords="314,385,332,403" id="P-15" title="P-15">
+	  	<area shape="rect" coords="334,385,352,403" id="Q-15" title="Q-15">
+	  	<area shape="rect" coords="353,385,371,403" id="R-15" title="R-15">
+	  	<area shape="rect" coords="392,385,410,403" id="T-15" title="T-15">
+	  	<area shape="rect" coords="412,385,430,403" id="U-15" title="U-15">
+	  	<area shape="rect" coords="432,385,450,403" id="V-15" title="V-15">
+	  	<area shape="rect" coords="452,385,470,403" id="W-15" title="W-15">
+
+	  	<!--ROW-16-->
+	  	<area shape="rect" coords="17,405,35,423" id="A-16" title="A-16">
+	  	<area shape="rect" coords="37,405,55,423" id="B-16" title="B-16">
+	  	<area shape="rect" coords="57,405,75,423" id="C-16" title="C-16">
+	  	<area shape="rect" coords="76,405,94,423" id="D-16" title="D-16">
+	  	<area shape="rect" coords="96,405,114,423" id="E-16" title="E-16">
+	  	<area shape="rect" coords="115,405,133,423" id="F-16" title="F-16">
+	  	<area shape="rect" coords="135,405,153,423" id="G-16" title="G-16">
+	  	<area shape="rect" coords="155,405,173,423" id="H-16" title="H-16">
+	  	<area shape="rect" coords="175,405,193,423" id="I-16" title="I-16">
+	  	<area shape="rect" coords="195,405,213,423" id="J-16" title="J-16">
+	  	<area shape="rect" coords="215,405,233,423" id="K-16" title="K-16">
+	  	<area shape="rect" coords="234,405,252,423" id="L-16" title="L-16">
+	  	<area shape="rect" coords="254,405,272,423" id="M-16" title="M-16">
+	  	<area shape="rect" coords="274,405,292,423" id="N-16" title="N-16">
+	  	<area shape="rect" coords="294,405,312,423" id="O-16" title="O-16">
+	  	<area shape="rect" coords="353,405,371,423" id="R-16" title="R-16">
+	  	<area shape="rect" coords="412,405,430,423" id="U-16" title="U-16">
+	  	<area shape="rect" coords="452,405,470,423" id="W-16" title="W-16">
+
+	  	<!--ROW-17-->
+	  	<area shape="rect" coords="37,425,55,443" id="B-17" title="B-17">
+	  	<area shape="rect" coords="76,425,94,443" id="D-17" title="D-17">
+	  	<area shape="rect" coords="115,425,133,443" id="F-17" title="F-17">
+	  	<area shape="rect" coords="155,425,173,443" id="H-17" title="H-17">
+	  	<area shape="rect" coords="195,425,213,443" id="J-17" title="J-17">
+	  	<area shape="rect" coords="215,425,233,443" id="K-17" title="K-17">
+	  	<area shape="rect" coords="254,425,272,443" id="M-17" title="M-17">
+	  	<area shape="rect" coords="294,425,312,443" id="O-17" title="O-17">
+	  	<area shape="rect" coords="314,425,332,443" id="P-17" title="P-17">
+	  	<area shape="rect" coords="334,425,352,443" id="Q-17" title="Q-17">
+	  	<area shape="rect" coords="353,425,371,443" id="R-17" title="R-17">
+	  	<area shape="rect" coords="373,425,391,443" id="S-17" title="S-17">
+	  	<area shape="rect" coords="392,425,410,443" id="T-17" title="T-17">
+	  	<area shape="rect" coords="412,425,430,443" id="U-17" title="U-17">
+	  	<area shape="rect" coords="432,425,450,443" id="V-17" title="V-17">
+	  	<area shape="rect" coords="452,425,470,443" id="W-17" title="W-17">
+
+	  	<!--ROW-18-->
+	  	<area shape="rect" coords="17,445,35,463" id="A-18" title="A-18">
+	  	<area shape="rect" coords="37,445,55,463" id="B-18" title="B-18">
+	  	<area shape="rect" coords="57,445,75,463" id="C-18" title="C-18">
+	  	<area shape="rect" coords="76,445,94,463" id="D-18" title="D-18">
+	  	<area shape="rect" coords="96,445,114,463" id="E-18" title="E-18">
+	  	<area shape="rect" coords="115,445,133,463" id="F-18" title="F-18">
+	  	<area shape="rect" coords="135,445,153,463" id="G-18" title="G-18">
+	  	<area shape="rect" coords="155,445,173,463" id="H-18" title="H-18">
+	  	<area shape="rect" coords="195,445,213,463" id="J-18" title="J-18">
+	  	<area shape="rect" coords="215,445,233,463" id="K-18" title="K-18">
+	  	<area shape="rect" coords="254,445,272,463" id="M-18" title="M-18">
+	  	<area shape="rect" coords="274,445,292,463" id="N-18" title="N-18">
+	  	<area shape="rect" coords="294,445,312,463" id="O-18" title="O-18">
+	  	<area shape="rect" coords="334,445,352,463" id="Q-18" title="Q-18">
+	  	<area shape="rect" coords="373,445,391,463" id="S-18" title="S-18">
+	  	<area shape="rect" coords="412,445,430,463" id="U-18" title="U-18">
+	  	<area shape="rect" coords="452,445,470,463" id="W-18" title="W-18">
+
+	  	<!--ROW-19-->
+	  	<area shape="rect" coords="17,464,35,482" id="A-19" title="A-19">
+	  	<area shape="rect" coords="57,464,75,482" id="C-19" title="C-19">
+	  	<area shape="rect" coords="96,464,114,482" id="E-19" title="E-19">
+	  	<area shape="rect" coords="155,464,173,482" id="H-19" title="H-19">
+	  	<area shape="rect" coords="175,464,193,482" id="I-19" title="I-19">
+	  	<area shape="rect" coords="195,464,213,482" id="J-19" title="J-19">
+	  	<area shape="rect" coords="215,464,233,482" id="K-19" title="K-19">
+	  	<area shape="rect" coords="234,464,252,482" id="L-19" title="L-19">
+	  	<area shape="rect" coords="254,464,272,482" id="M-19" title="M-19">
+	  	<area shape="rect" coords="294,464,312,482" id="O-19" title="O-19">
+	  	<area shape="rect" coords="314,464,332,482" id="P-19" title="P-19">
+	  	<area shape="rect" coords="334,464,352,482" id="Q-19" title="Q-19">
+	  	<area shape="rect" coords="353,464,371,482" id="R-19" title="R-19">
+	  	<area shape="rect" coords="373,464,391,482" id="S-19" title="S-19">
+	  	<area shape="rect" coords="392,464,410,482" id="T-19" title="T-19">
+	  	<area shape="rect" coords="412,464,430,482" id="U-19" title="U-19">
+	  	<area shape="rect" coords="432,464,450,482" id="V-19" title="V-19">
+	  	<area shape="rect" coords="452,464,470,482" id="W-19" title="W-19">
+
+	  	<!--ROW-20-->
+	  	<area shape="rect" coords="17,484,35,502" id="A-20" title="A-20">
+	  	<area shape="rect" coords="37,484,55,502" id="B-20" title="B-20">
+	  	<area shape="rect" coords="57,484,75,502" id="C-20" title="C-20">
+	  	<area shape="rect" coords="76,484,94,502" id="D-20" title="D-20">
+	  	<area shape="rect" coords="96,484,114,502" id="E-20" title="E-20">
+	  	<area shape="rect" coords="115,484,133,502" id="F-20" title="F-20">
+	  	<area shape="rect" coords="155,484,173,502" id="H-20" title="H-20">
+	  	<area shape="rect" coords="195,484,213,502" id="J-20" title="J-20">
+	  	<area shape="rect" coords="215,484,233,502" id="K-20" title="K-20">
+	  	<area shape="rect" coords="254,484,272,502" id="M-20" title="M-20">
+	  	<area shape="rect" coords="314,484,332,502" id="P-20" title="P-20">
+	  	<area shape="rect" coords="353,484,371,502" id="R-20" title="R-20">
+	  	<area shape="rect" coords="392,484,410,502" id="T-20" title="T-20">
+	  	<area shape="rect" coords="432,484,450,502" id="V-20" title="V-20">
+
+	  	<!--Mission-->
+	  	<!--<area shape="rect" coords="531,51,544,62" alt="01" id="01">-->
+
+
+	</map>
+
+  	<input class="name" type="text">
+
+	<input class="healthBox healthBox_1" type="checkbox">
+	<input class="healthBox healthBox_2" type="checkbox">
+	<input class="healthBox healthBox_3" type="checkbox">
+	<input class="healthBox healthBox_4" type="checkbox">
+
+	<input class="healthBox healthBox_5" type="checkbox">
+	<input class="healthBox healthBox_6" type="checkbox">
+
+	<input class="healthBox healthBox_7" type="checkbox">
+	<input class="healthBox healthBox_8" type="checkbox">
+
+
+	<div id="sec1-1" class="mission missionOff" title="1-1"></div>
+	<div id="sec1-2" class="mission missionOff" title="1-2"></div>
+	<div id="sec1-3" class="mission missionOff" title="1-3"></div>
+	<div id="sec1-4" class="mission missionOff" title="1-4"></div>
+	<div id="sec1-5" class="mission missionOff" title="1-5"></div>
+	<div id="sec1-6" class="mission missionOff" title="1-6"></div>
+
+	<div id="sec2-1" class="mission missionOff" title="2-1"></div>
+	<div id="sec2-2" class="mission missionOff" title="2-2"></div>
+	<div id="sec2-3" class="mission missionOff" title="2-3"></div>
+	<div id="sec2-4" class="mission missionOff" title="2-4"></div>
+	<div id="sec2-5" class="mission missionOff" title="2-5"></div>
+	<div id="sec2-6" class="mission missionOff" title="2-6"></div>
+
+	<div id="sec3-1" class="mission missionOff" title="3-1"></div>
+	<div id="sec3-2" class="mission missionOff" title="3-2"></div>
+	<div id="sec3-3" class="mission missionOff" title="3-3"></div>
+	<div id="sec3-4" class="mission missionOff" title="3-4"></div>
+	<div id="sec3-5" class="mission missionOff" title="3-5"></div>
+	<div id="sec3-6" class="mission missionOff" title="3-6"></div>
+
+	<div id="sec4-1" class="mission missionOff" title="4-1"></div>
+	<div id="sec4-2" class="mission missionOff" title="4-2"></div>
+	<div id="sec4-3" class="mission missionOff" title="4-3"></div>
+	<div id="sec4-4" class="mission missionOff" title="4-4"></div>
+	<div id="sec4-5" class="mission missionOff" title="4-5"></div>
+	<div id="sec4-6" class="mission missionOff" title="4-6"></div>
+
+	<table>
+		<tr><td></td></tr><!--First row to append to-->
+	</table>
+
+
+
+
+</div><!--container-->
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+
+//to find coords on map
+/*
+document.onmousemove = function(e){
+var x = e.pageX;
+var y = e.pageY;
+e.target.title = "X: "+x+" and Y: "+y;
+};
+*/
+
+
+// Tooltips titles
+$( document ).tooltip({
+	track: true
+});
+
+
+// ADD COORDS TO TABLE
+$("area").click(function(){
+
+	space = $(this).attr("id");
+	$("table").append("<tr><td>" + space + "</td></tr>");
+
+	//After 40 turn...
+	if($("table tbody tr").length == 42){
+		alert("Game Over");
+	}
+});
+
+
+//HILIGHT STUFF FOR AREAS*************************************
+
+$('img[usemap]').maphilight({alwaysOn:true});
+
+// Turn off all
+//$("area").data('maphilight', { alwaysOn: false }).trigger('alwaysOn.maphilight');
+/* Turn area red when clicked
+$('area').click(function() {
+	var id = "#" + $(this).attr("id");
+	if($(id).data("pushed") == "on"){
+		$(id).data("pushed", "off");
+		$(id).data('maphilight', {fillColor: '000000', fillOpacity: 0.2}).trigger('alwaysOn.maphilight');
+	}else{
+	$(id).data("pushed", "on");
+    $(id).data('maphilight', {fillColor: 'FF0000', fillOpacity: 0.6}).trigger('alwaysOn.maphilight');		
+	}
+});
+*/
+
+
+
+// missionOff / missionActive / missionComplete
+$(".mission").click(function(){
+	cell = $(this);
+	if(cell.hasClass("missionOff")){
+		cell.removeClass("missionOff");
+		cell.addClass("missionActive");
+	}else if(cell.hasClass("missionActive")){
+		cell.removeClass("missionActive");
+		cell.addClass("missionComplete");
+	}else{
+		cell.removeClass("missionComplete");
+		cell.addClass("missionOff");
+	}
+
+});
+
+// Undo a move from table
+$("table").click(function(){
+	$("td").last().remove();
+});
+
+
+});//docready
+</script>
+
+
+{% endblock %}

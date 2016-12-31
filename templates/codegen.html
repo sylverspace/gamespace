@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+{% block content %}
+
+<h1>Code generator</h1>
+
+<form action="{{ url_for('codegen') }}" method="POST">
+	Number of digit: <input type="text" name="numberOfDigits"><br><br>
+	<input type="submit" value="Submit"><br><br>
+</form>
+
+Result: {{ numberOfDigits }}
+
+
+	
+
+{% endblock %}

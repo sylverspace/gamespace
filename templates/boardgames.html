@@ -1,0 +1,117 @@
+{% extends "home.html" %}
+{% block content %}
+
+<style type="text/css">
+
+form input{
+	text-align: center;
+	margin: 0 auto;
+}
+.tub{
+	width: 20px;
+	height: 20px;
+}
+table{
+
+}
+table th{
+	text-align: center;
+	font-size: 1.5em;
+}
+table td{
+
+}
+
+</style>
+
+<h1>Add a game?</h1>
+<form action="{{ url_for('addgame') }}" method="POST" enctype="multipart/form-data">
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" name="name" required><br/>
+		<small class="form-text text-muted">The name of the game.</small>
+    </div>
+    <div class="form-group">
+		<label for="year">Year</label>
+		<input type="text" name="year" size="4" maxlength="4" required><br/>
+		<small class="form-text text-muted">The year the game was released.</small>
+    </div>
+    <div class="form-group">
+		<label for="n_players">Number of players:</label>
+		<input type="text" name="n_players" size="4" required>
+		<small class="form-text text-muted">Ex: 2-4.</small>
+    </div>
+    <div class="form-group">
+		<label for="play_time">Play time:</label>
+		<input type="text" name="play_time" size="4" required>
+		<small class="form-text text-muted"> In minutes.</small>
+    </div>
+    <div class="form-group">
+		<label for="age">Age:</label>
+		<input type="text" name="age" size="4" maxlength="3" required>
+		<small class="form-text text-muted">Ex: 8+</small>
+    </div>
+    <div class="form-group">
+		<label for="designer">Designer:</label>
+		<input type="text" name="designer" required>
+    </div>
+    <div class="form-group">
+		<label for="artist">Artist:</label>
+		<input type="text" name="artist" required>
+    </div>
+    <div class="form-group">
+		<label for="artist">Publisher:</label>
+		<input type="text" name="publisher" required>
+    </div>
+
+    
+    <div class="form-group">
+		<label for="file">File</label>
+		<input type="file" class="form-control-file" name="file">
+		<small class="form-text text-muted">The image of the box.</small>
+    </div>
+
+	<input type="submit" value="Submit" class="btn btn-success"><br/><br/>
+</form>
+
+
+	
+
+<table class="table table-hover">
+	<th class="" colspan="10">Boardgames list</th>
+	<tr>
+		<td>#</td>
+		<td>Name</td>
+		<td>Year</td>
+		<td>Number of players</td>
+		<td>Play time</td>
+		<td>Age</td>
+		<td>Designer</td>
+		<td>Artist</td>
+		<td>Publisher</td>
+		<td>Image</td>
+	</tr>
+
+	{% set cnt = 1 %}
+	{% for item in result %}
+	<tr class="info" >
+		
+		<td>{{ cnt }}</td>
+		<td><a href="{{ url_for('boardgame_page')}}">{{ item[0] }}</a></td>
+		<td>{{ item[1] }}</td>
+		<td>{{ item[2] }}</td>
+		<td>{{ item[3] }}</td>
+		<td>{{ item[4] }}</td>
+		<td>{{ item[5] }}</td>
+		<td>{{ item[6] }}</td>
+		<td>{{ item[7] }}</td>
+		<td><img class="tub" src="../static/game_img/{{ item[8] }}"/></td>
+		
+
+	</tr>
+	{% set cnt = cnt + 1 %}
+	{% endfor %}
+
+</table>
+
+{% endblock %}

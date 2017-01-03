@@ -10,10 +10,17 @@ from werkzeug import secure_filename
 app = Flask(__name__)
 mysql = MySQL(app)
 
+#When on local machine
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'pythontest'
+
+#When on python anywhere
+#app.config['MYSQL_HOST'] = 'supersylver.mysql.pythonanywhere-services.com'
+#app.config['MYSQL_USER'] = 'supersylver'
+#app.config['MYSQL_PASSWORD'] = '123456789q'
+#app.config['MYSQL_DB'] = 'supersylver$pythontest'
 
 # This is the path to the upload directory
 app.config['UPLOAD_FOLDER'] = 'static/game_img'
@@ -93,11 +100,6 @@ def codegen():
 
     return render_template('codegen.html')
 
-@app.route('/codegenAct', methods=['POST'])
-def codegenAct():
-    numberOfDigits = request.form['numberOfDigits']
-
-    return render_template('codegen.html', numberOfDigits=numberOfDigits)
 
 
 

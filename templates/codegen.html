@@ -1,16 +1,54 @@
 {% extends "home.html" %}
 {% block content %}
 
+<style type="text/css">
+
+#input{
+	width: 20px;
+}
+#result{
+	font-size: 30px;
+}
+
+</style>
+
 <h1>Code generator</h1>
 
-<form action="{{ url_for('codegen') }}" method="POST">
-	Number of digit: <input type="text" name="numberOfDigits"><br><br>
-	<input type="submit" value="Submit"><br><br>
-</form>
 
-Result: {{ numberOfDigits }}
+Number of digits: <input id="input" type="text" maxlength="2"><br><br>
+<input id="submit" type="submit" value="Submit"><br><br>
 
 
-	
+Result: <div id="result"></div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+//Function to get 1 digit
+function getANumber(){
+	xNumber = Math.floor(Math.random() * 10);
+}
+
+//On Submit
+$("#submit").click(function(){
+	//Delete old result
+	$("#result").html("");
+	//Get Value
+	NOD = $("#input").val();
+	//Loop n times wanted
+	for (i=0; i < NOD; i++){
+		getANumber()
+		$("#result").append(xNumber);
+	}
+
+});//submit
+
+
+});//doc ready
+
+</script>
 
 {% endblock %}
